@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run central PR check action
-        uses: teamholmes/central-github-actions/prcheck@v2
+        uses: teamholmes/central-github-actions/prcheck@main
         with:
           pr-number: ${{ github.event.pull_request.number }}
           base-branch: ${{ github.event.pull_request.base.ref }}
