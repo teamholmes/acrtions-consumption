@@ -1,0 +1,19 @@
+name: PR Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR repository
+        uses: actions/checkout@v4
+
+      - name: Run central PR check action
+        uses: teamholmes/central-github-actions/prcheck@v2
+        with:
+          pr-number: ${{ github.event.pull_request.number }}
+          base-branch: ${{ github.event.pull_request.base.ref }}
