@@ -17,3 +17,4 @@ jobs:
         with:
           pr-number: ${{ github.event.pull_request.number }}
           base-branch: ${{ github.event.pull_request.base.ref }}
+          actor: ${{ github.actor }}
